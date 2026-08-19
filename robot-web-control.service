@@ -1,0 +1,15 @@
+[Unit]
+Description=Robot Web Control API
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=unitree
+WorkingDirectory=/home/unitree
+ExecStart=/usr/bin/python3 /home/unitree/robot_web_control.py --mode local --bind 0.0.0.0 --port 8090
+Restart=always
+RestartSec=2
+
+[Install]
+WantedBy=multi-user.target

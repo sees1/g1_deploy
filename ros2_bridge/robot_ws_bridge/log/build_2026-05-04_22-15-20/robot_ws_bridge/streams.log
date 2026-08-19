@@ -1,0 +1,25 @@
+[1.053s] Invoking command in '/home/unitree/ros2_bridge/robot_ws_bridge/build/robot_ws_bridge': PYTHONPATH=/home/unitree/ros2_bridge/robot_ws_bridge/build/robot_ws_bridge/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/unitree/ros2_bridge/robot_ws_bridge/install/robot_ws_bridge/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/unitree/ros2_bridge/robot_ws_bridge/build/robot_ws_bridge/build --no-deps symlink_data
+[1.410s] running develop
+[1.616s] running egg_info
+[1.616s] creating robot_ws_bridge.egg-info
+[1.616s] writing robot_ws_bridge.egg-info/PKG-INFO
+[1.617s] writing dependency_links to robot_ws_bridge.egg-info/dependency_links.txt
+[1.617s] writing entry points to robot_ws_bridge.egg-info/entry_points.txt
+[1.617s] writing requirements to robot_ws_bridge.egg-info/requires.txt
+[1.617s] writing top-level names to robot_ws_bridge.egg-info/top_level.txt
+[1.619s] writing manifest file 'robot_ws_bridge.egg-info/SOURCES.txt'
+[1.662s] reading manifest file 'robot_ws_bridge.egg-info/SOURCES.txt'
+[1.663s] writing manifest file 'robot_ws_bridge.egg-info/SOURCES.txt'
+[1.716s] running build_ext
+[1.716s] Creating /home/unitree/ros2_bridge/robot_ws_bridge/install/robot_ws_bridge/lib/python3.8/site-packages/site.py
+[1.720s] Creating /home/unitree/ros2_bridge/robot_ws_bridge/install/robot_ws_bridge/lib/python3.8/site-packages/robot-ws-bridge.egg-link (link to .)
+[1.721s] Installing robot_ws_bridge script to /home/unitree/ros2_bridge/robot_ws_bridge/install/robot_ws_bridge/lib/robot_ws_bridge
+[1.721s] 
+[1.721s] Installed /home/unitree/ros2_bridge/robot_ws_bridge/build/robot_ws_bridge
+[1.722s] running symlink_data
+[1.722s] creating /home/unitree/ros2_bridge/robot_ws_bridge/install/robot_ws_bridge/share/ament_index
+[1.722s] creating /home/unitree/ros2_bridge/robot_ws_bridge/install/robot_ws_bridge/share/ament_index/resource_index
+[1.722s] creating /home/unitree/ros2_bridge/robot_ws_bridge/install/robot_ws_bridge/share/ament_index/resource_index/packages
+[1.722s] symbolically linking /home/unitree/ros2_bridge/robot_ws_bridge/build/robot_ws_bridge/resource/robot_ws_bridge -> /home/unitree/ros2_bridge/robot_ws_bridge/install/robot_ws_bridge/share/ament_index/resource_index/packages
+[1.722s] symbolically linking /home/unitree/ros2_bridge/robot_ws_bridge/build/robot_ws_bridge/package.xml -> /home/unitree/ros2_bridge/robot_ws_bridge/install/robot_ws_bridge/share/robot_ws_bridge
+[1.786s] Invoked command in '/home/unitree/ros2_bridge/robot_ws_bridge/build/robot_ws_bridge' returned '0': PYTHONPATH=/home/unitree/ros2_bridge/robot_ws_bridge/build/robot_ws_bridge/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/unitree/ros2_bridge/robot_ws_bridge/install/robot_ws_bridge/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/unitree/ros2_bridge/robot_ws_bridge/build/robot_ws_bridge/build --no-deps symlink_data

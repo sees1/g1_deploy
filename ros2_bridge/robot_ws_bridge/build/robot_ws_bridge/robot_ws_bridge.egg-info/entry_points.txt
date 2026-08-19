@@ -1,0 +1,3 @@
+[console_scripts]
+robot_ws_bridge = robot_ws_bridge.main:main
+

@@ -1,0 +1,9 @@
+[project]
+name = "robot-ws-bridge-runtime"
+version = "0.1.0"
+description = "Runtime deps for robot_ws_bridge ROS2 node"
+requires-python = "==3.11.*"
+dependencies = [
+  "websockets>=15.0.1",
+]
+

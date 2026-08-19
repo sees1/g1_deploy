@@ -1,0 +1,14 @@
+[Unit]
+Description=cmd_vel to Unitree WirelessController Bridge
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/home/unitree/ros2_bridge/bridge_soft/scripts/run_cmdvel_wireless.sh
+Restart=always
+RestartSec=2
+WorkingDirectory=/home/unitree/ros2_bridge/bridge_soft
+
+[Install]
+WantedBy=default.target

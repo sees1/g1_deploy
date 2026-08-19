@@ -1,0 +1,10 @@
+Metadata-Version: 1.2
+Name: robot-ws-bridge
+Version: 0.1.0
+Summary: WS сервер на роботе как ROS2 node: JSON команды → ROS2, статусы → WS.
+Home-page: UNKNOWN
+Maintainer: robot-team
+Maintainer-email: devnull@example.com
+License: Apache-2.0
+Description: UNKNOWN
+Platform: UNKNOWN

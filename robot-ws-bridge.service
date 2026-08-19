@@ -1,0 +1,14 @@
+[Unit]
+Description=Robot WS Bridge (WebSocket -> /cmd_vel)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/home/unitree/ros2_bridge/bridge_soft/scripts/run_robot_ws_bridge.sh
+Restart=always
+RestartSec=2
+WorkingDirectory=/home/unitree/ros2_bridge/bridge_soft
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,23 @@
+running develop
+running egg_info
+creating robot_ws_bridge.egg-info
+writing robot_ws_bridge.egg-info/PKG-INFO
+writing dependency_links to robot_ws_bridge.egg-info/dependency_links.txt
+writing entry points to robot_ws_bridge.egg-info/entry_points.txt
+writing requirements to robot_ws_bridge.egg-info/requires.txt
+writing top-level names to robot_ws_bridge.egg-info/top_level.txt
+writing manifest file 'robot_ws_bridge.egg-info/SOURCES.txt'
+reading manifest file 'robot_ws_bridge.egg-info/SOURCES.txt'
+writing manifest file 'robot_ws_bridge.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/unitree/ros2_bridge/robot_ws_bridge/install/robot_ws_bridge/lib/python3.8/site-packages/site.py
+Creating /home/unitree/ros2_bridge/robot_ws_bridge/install/robot_ws_bridge/lib/python3.8/site-packages/robot-ws-bridge.egg-link (link to .)
+Installing robot_ws_bridge script to /home/unitree/ros2_bridge/robot_ws_bridge/install/robot_ws_bridge/lib/robot_ws_bridge
+
+Installed /home/unitree/ros2_bridge/robot_ws_bridge/build/robot_ws_bridge
+running symlink_data
+creating /home/unitree/ros2_bridge/robot_ws_bridge/install/robot_ws_bridge/share/ament_index
+creating /home/unitree/ros2_bridge/robot_ws_bridge/install/robot_ws_bridge/share/ament_index/resource_index
+creating /home/unitree/ros2_bridge/robot_ws_bridge/install/robot_ws_bridge/share/ament_index/resource_index/packages
+symbolically linking /home/unitree/ros2_bridge/robot_ws_bridge/build/robot_ws_bridge/resource/robot_ws_bridge -> /home/unitree/ros2_bridge/robot_ws_bridge/install/robot_ws_bridge/share/ament_index/resource_index/packages
+symbolically linking /home/unitree/ros2_bridge/robot_ws_bridge/build/robot_ws_bridge/package.xml -> /home/unitree/ros2_bridge/robot_ws_bridge/install/robot_ws_bridge/share/robot_ws_bridge
