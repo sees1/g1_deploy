@@ -1,0 +1,307 @@
+api:
+  enabled: true
+  host: 0.0.0.0
+  port: 8080
+  cmd_vel_timeout_sec: 0.5
+
+FSM:
+  _: 
+    Passive:
+      id: 1
+    FixStand:
+      id: 2
+    Velocity:
+      id: 3
+      type: RLBase
+
+    Mimic_Dance_101: 
+      id: 101
+      type: Mimic
+    Mimic_Dance_102:
+      id: 102
+      type: Mimic
+    Mimic_Dance_103:
+      id: 103
+      type: Mimic
+    Mimic_Dance_104:
+      id: 104
+      type: Mimic
+    Mimic_Dance_105:
+      id: 105
+      type: Mimic
+    Mimic_Dance_106:
+      id: 106
+      type: Mimic
+    Mimic_Dance_107:
+      id: 107
+      type: Mimic
+    Mimic_Dance_108:
+      id: 108
+      type: Mimic
+    Mimic_Dance_109:
+      id: 109
+      type: Mimic
+    Mimic_Dance_110:
+      id: 110
+      type: Mimic
+    Mimic_Dance_111:
+      id: 111
+      type: Mimic
+    Mimic_Dance_112:
+      id: 112
+      type: Mimic
+    Mimic_Dance_113:
+      id: 113
+      type: Mimic
+    # Mimic_Dance_114:
+    #   id: 114
+    #   type: Mimic
+    # Mimic_Dance_115:
+    #   id: 115
+    #   type: Mimic
+    # Mimic_Dance_116:
+    #   id: 116
+    #   type: Mimic
+    # Mimic_Dance_117:
+    #   id: 117
+    #   type: Mimic
+    # Mimic_Dance_118:
+    #   id: 118
+    #   type: Mimic
+    # Mimic_Dance_119:
+    #   id: 119
+    #   type: Mimic
+    # Mimic_Dance_120:
+    #   id: 120
+    #   type: Mimic
+    # Mimic_Dance_121:
+    #   id: 121
+    #   type: Mimic
+    # Mimic_Dance_122:
+    #   id: 122
+    #   type: Mimic
+    # Mimic_Dance_123:
+    #   id: 123
+    #   type: Mimic
+    # Mimic_Dance_124:
+    #   id: 124
+    #   type: Mimic
+
+
+
+  Passive:
+    transitions: 
+      FixStand: LT + up.on_pressed
+    mode: [
+      1,1,1,1,1,1,
+      1,1,1,1,1,1,
+      1,1,1,
+      1,1,1,1,1,1,1,
+      1,1,1,1,1,1,1,
+    ]
+    kd: [
+      3,3,3,3,3,3,
+      3,3,3,3,3,3,
+      3,3,3,
+      3,3,3,3,3,3,3,  
+      3,3,3,3,3,3,3,  
+    ]
+  FixStand:
+    transitions: 
+      Passive: LT + B.on_pressed
+      Velocity: RB + X.on_pressed
+    kp: [
+      100., 100., 100., 150., 40., 40.,
+      100., 100., 100., 150., 40., 40.,
+      200,200,200,
+      40,40,40,40,40,40,40,
+      40,40,40,40,40,40,40,
+    ]
+    kd: [
+      2,2,2,4,2,2,
+      2,2,2,4,2,2,
+      5,5,5,
+      10,10,10,10,10,10,10,
+      10,10,10,10,10,10,10,
+    ]
+    ts: [0, 3]
+    qs: [
+      [],
+      [ -0.1, 0,0,0.3,-0.2,0,
+        -0.1, 0,0,0.3,-0.2,0,
+        0,0,0,
+        0, 0.25,0,0.97,0.15, 0,0,
+        0, -0.25,0,0.97,-0.15, 0,0
+      ]
+    ]
+  Velocity:
+    transitions: 
+      Passive: LT + B.on_pressed
+      Mimic_Dance_101: LT(2s) + down.on_pressed
+      Mimic_Dance_102: LT(2s) + left.on_pressed
+      Mimic_Dance_103: LT(2s) + right.on_pressed
+      Mimic_Dance_104: LB(2s) + left.on_pressed
+      Mimic_Dance_105: LB(2s) + right.on_pressed
+      Mimic_Dance_106: LB(2s) + down.on_pressed
+      Mimic_Dance_107: LB(2s) + up.on_pressed
+      Mimic_Dance_108: RT(2s) + up.on_pressed
+      Mimic_Dance_109: RT(2s) + down.on_pressed
+      Mimic_Dance_110: RT(2s) + left.on_pressed
+      Mimic_Dance_111: RT(2s) + right.on_pressed
+      Mimic_Dance_112: RB(2s) + up.on_pressed
+      Mimic_Dance_113: RB(2s) + down.on_pressed
+      Mimic_Dance_114: RB(2s) + left.on_pressed
+      Mimic_Dance_115: RB(2s) + right.on_pressed
+      Mimic_Dance_116: RT(2s) + A.on_pressed
+      Mimic_Dance_117: RT(2s) + B.on_pressed
+      Mimic_Dance_118: RT(2s) + X.on_pressed
+      Mimic_Dance_119: RT(2s) + Y.on_pressed
+      Mimic_Dance_120: RT(2s) + Y.on_pressed
+      Mimic_Dance_121: RT(2s) + Y.on_pressed
+      Mimic_Dance_122: RT(2s) + Y.on_pressed
+      Mimic_Dance_123: RT(2s) + Y.on_pressed
+      Mimic_Dance_124: RT(2s) + Y.on_pressed
+    policy_dir: ../../policy/a1_23/velocity
+  Mimic_Dance_101:
+    transitions: 
+      Passive: LT + B.on_pressed
+      Velocity: RB + X.on_pressed
+    fps: 30
+    motion_file: ../../policy/a1_23/mocap/frightened.csv
+    policy_dir: ../../policy/a1_23/mimic/frightened
+    time_start: 0
+    time_end: 25
+  Mimic_Dance_102:
+    transitions: 
+      Passive: LT + B.on_pressed
+      Velocity: RB + X.on_pressed
+    fps: 30
+    motion_file: ../../policy/a1_23/mocap/1.csv
+    policy_dir: ../../policy/a1_23/mimic/1
+    time_start: 0
+    time_end: 25
+  Mimic_Dance_103:
+    transitions: 
+      Passive: LT + B.on_pressed
+      Velocity: RB + X.on_pressed
+    fps: 30
+    motion_file: ../../policy/a1_23/mocap/2.csv
+    policy_dir: ../../policy/a1_23/mimic/2
+    time_start: 0
+    time_end: 60
+  Mimic_Dance_104:
+    transitions: 
+      Passive: LT + B.on_pressed
+      Velocity: RB + X.on_pressed
+    fps: 30
+    motion_file: ../../policy/a1_23/mocap/contrabass.csv
+    policy_dir: ../../policy/a1_23/mimic/contrabass
+    time_start: 0
+    time_end: 60
+  Mimic_Dance_105:
+    transitions: 
+      Passive: LT + B.on_pressed
+      Velocity: RB + X.on_pressed
+    fps: 30
+    motion_file: ../../policy/a1_23/mocap/piano2.csv
+    policy_dir: ../../policy/a1_23/mimic/piano2
+    time_start: 0
+    time_end: 60
+  Mimic_Dance_106:
+    transitions: 
+      Passive: LT + B.on_pressed
+      Velocity: RB + X.on_pressed
+    fps: 30
+    motion_file: ../../policy/a1_23/mocap/new/piano_fin.csv
+    policy_dir: ../../policy/a1_23/mimic/piano_fin/new
+    time_start: 0
+    time_end: 60
+  Mimic_Dance_107:
+    transitions: 
+      Passive: LT + B.on_pressed
+      Velocity: RB + X.on_pressed
+    fps: 30
+    motion_file: ../../policy/a1_23/mocap/contrabass_fin.csv
+    policy_dir: ../../policy/a1_23/mimic/contrabass_fin
+    time_start: 0
+    time_end: 60
+  Mimic_Dance_108:
+    transitions: 
+      Passive: LT + B.on_pressed
+      Velocity: RB + X.on_pressed
+    fps: 30
+    motion_file: ../../policy/a1_23/mocap/piano.csv
+    policy_dir: ../../policy/a1_23/mimic/piano
+    time_start: 0
+    time_end: 60
+  Mimic_Dance_109:
+    transitions: 
+      Passive: LT + B.on_pressed
+      Velocity: RB + X.on_pressed
+    fps: 30
+    motion_file: ../../policy/a1_23/mocap/new/keys_fin.csv
+    policy_dir: ../../policy/a1_23/mimic/keys_fin
+    time_start: 0
+    time_end: 60
+
+  Mimic_Dance_110:
+    transitions: 
+      Passive: LT + B.on_pressed
+      Velocity: RB + X.on_pressed
+    fps: 30
+    motion_file: ../../policy/a1_23/mocap/new/royal.csv
+    policy_dir: ../../policy/a1_23/mimic/royal
+    time_start: 0
+    time_end: 60
+
+  Mimic_Dance_111:
+    transitions: 
+      Passive: LT + B.on_pressed
+      Velocity: RB + X.on_pressed
+    fps: 30
+    motion_file: ../../policy/a1_23/mocap/new/pult.csv
+    policy_dir: ../../policy/a1_23/mimic/pult
+    time_start: 0
+    time_end: 60
+
+
+  Mimic_Dance_112:
+    transitions: 
+      Passive: LT + B.on_pressed
+      Velocity: RB + X.on_pressed
+    fps: 30
+    motion_file: ../../policy/a1_23/mocap/new/mixer.csv
+    policy_dir: ../../policy/a1_23/mimic/mixer
+    time_start: 0
+    time_end: 60
+
+  Mimic_Dance_113:
+    transitions: 
+      Passive: LT + B.on_pressed
+      Velocity: RB + X.on_pressed
+    fps: 30
+    motion_file: ../../policy/a1_23/mocap/new/IMG_1845.csv
+    policy_dir: ../../policy/a1_23/mimic/IMG_1845
+    time_start: 0
+    time_end: 60
+
+
+  # Mimic_Dance_114:
+  #   transitions: 
+  #     Passive: LT + B.on_pressed
+  #     Velocity: RB + X.on_pressed
+  #   fps: 30
+  #   motion_file: ../../policy/a1_23/mocap/new/keys_fin.csv
+  #   policy_dir: ../../policy/a1_23/mimic/keys_fin
+  #   time_start: 0
+  #   time_end: 60
+
+    # Mimic_Dance_115:
+  #   transitions: 
+  #     Passive: LT + B.on_pressed
+  #     Velocity: RB + X.on_pressed
+  #   fps: 30
+  #   motion_file: ../../policy/a1_23/mocap/new/keys_fin.csv
+  #   policy_dir: ../../policy/a1_23/mimic/keys_fin
+  #   time_start: 0
+  #   time_end: 60
